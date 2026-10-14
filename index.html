@@ -462,7 +462,10 @@
 </head>
 <body>
 
-  <!-- Envelope Opening Overlay -->
+  <!-- Audio Element configured with your exact file name -->
+  <audio id="weddingAudio" src="Best Engagement invitation telugu.mp3" loop preload="auto"></audio>
+
+  <!-- Royal Maroon Envelope Opening Overlay with Bouncing Arrow -->
   <div class="envelope-screen" id="envelopeScreen" onclick="openEnvelope()">
     <div class="envelope-ganesha">ॐ</div>
     <div class="envelope-shloka">|| श्री गणेशाय नमः ||</div>
@@ -599,7 +602,7 @@
   </div>
 
   <script>
-    // Fallback for file extensions
+    // Automatic fallback for image extensions
     function handleGaneshaFallback(img) {
       if (img.src.indexOf('ganesha.jpg.jfif') === -1) {
         img.src = 'ganesha.jpg.jfif';
@@ -611,7 +614,10 @@
       }
     }
 
-    // Envelope Opening Animation
+    const audio = document.getElementById('weddingAudio');
+    let isPlaying = false;
+
+    // Envelope Opening Animation + Play Audio
     function openEnvelope() {
       const screen = document.getElementById('envelopeScreen');
       screen.classList.add('opened');
@@ -623,7 +629,29 @@
           colors: ['#E5BA6A', '#9E1F3B', '#FFA726', '#FFFFFF']
         });
       }
-      startCelebrationSynth();
+      if (audio) {
+        audio.play().then(() => {
+          isPlaying = true;
+          document.getElementById('audioToggle').innerText = '🔊';
+        }).catch(err => {
+          console.log("Autoplay waiting for direct tap:", err);
+        });
+      }
+    }
+
+    // Toggle Play / Mute Button
+    function toggleAudio() {
+      const btn = document.getElementById('audioToggle');
+      if (!audio) return;
+      if (isPlaying) {
+        audio.pause();
+        isPlaying = false;
+        btn.innerText = '🔇';
+      } else {
+        audio.play();
+        isPlaying = true;
+        btn.innerText = '🔊';
+      }
     }
 
     // Live Countdown Timer to Oct 30, 2026, 11:00 AM IST
@@ -640,7 +668,7 @@
       }
       const days = Math.floor(diff / (1000 * 60 * 60 * 24));
       const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const mins = Math.floor((diff % (1000 * 60)) / (1000 * 60));
       const secs = Math.floor((diff % (1000 * 60)) / 1000);
       document.getElementById('days').innerText = String(days).padStart(2, '0');
       document.getElementById('hours').innerText = String(hours).padStart(2, '0');
@@ -649,49 +677,6 @@
     }
     setInterval(updateCountdown, 1000);
     updateCountdown();
-
-    // Procedural Festive Notes Synthesizer
-    let audioCtx = null;
-    let isPlaying = false;
-    let noteTimer = null;
-    const notes = [261.63, 293.66, 329.63, 392.00, 440.00, 523.25];
-
-    function playNote(freq) {
-      if (!audioCtx) return;
-      const osc = audioCtx.createOscillator();
-      const gain = audioCtx.createGain();
-      osc.type = 'triangle';
-      osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
-      gain.gain.setValueAtTime(0.08, audioCtx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 1.2);
-      osc.connect(gain);
-      gain.connect(audioCtx.destination);
-      osc.start();
-      osc.stop(audioCtx.currentTime + 1.2);
-    }
-
-    function startCelebrationSynth() {
-      if (isPlaying) return;
-      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-      isPlaying = true;
-      document.getElementById('audioToggle').innerText = '🔊';
-      let i = 0;
-      noteTimer = setInterval(() => {
-        playNote(notes[i % notes.length]);
-        i++;
-      }, 700);
-    }
-
-    function toggleAudio() {
-      const btn = document.getElementById('audioToggle');
-      if (isPlaying) {
-        clearInterval(noteTimer);
-        isPlaying = false;
-        btn.innerText = '🔇';
-      } else {
-        startCelebrationSynth();
-      }
-    }
   </script>
 </body>
 </html>
