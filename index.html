@@ -11,15 +11,15 @@
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <style>
     :root {
-      --navy-title: #162544;
-      --maroon-heading: #9E1F3B;
+      --navy-title: #142340;
+      --maroon-heading: #98223B;
       --gold-dark: #8E6A26;
-      --gold-border: #E5CCA2;
+      --gold-border: #E8D7B8;
       --text-dark: #3A322C;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      background-color: #E8DCCB;
+      background-color: #EFE7DA;
       font-family: 'Plus Jakarta Sans', sans-serif;
       color: var(--text-dark);
       min-height: 100vh;
@@ -138,62 +138,75 @@
       position: relative;
       border-radius: 26px;
       overflow: hidden;
-      box-shadow: 0 20px 50px rgba(70, 46, 12, 0.22);
+      box-shadow: 0 22px 55px rgba(70, 46, 12, 0.2);
       background: #FFFFFF;
       border: 1px solid var(--gold-border);
     }
 
-    /* Garland Background Frame */
+    /* Card Inner Wrapper */
     .card-inner {
       position: relative;
       background: #FFFDF9;
-      padding: 34px 22px 30px;
+      padding: 38px 24px 28px;
+      overflow: hidden;
     }
     .card-inner::after {
       content: "";
       position: absolute;
-      top: 8px;
-      left: 8px;
-      right: 8px;
-      bottom: 8px;
-      border: 1.5px dashed #DFC394;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      border: 1.2px dashed #DFC394;
       border-radius: 18px;
       pointer-events: none;
       z-index: 1;
     }
 
-    /* Marigold Side Garlands */
-    .garland-left, .garland-right {
+    /* Corner Floral Bunches (Roses & Eucalyptus Sprigs) */
+    .corner-garland {
       position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 22px;
-      z-index: 2;
-      opacity: 0.95;
-      background-repeat: repeat-y;
-      background-size: 22px 52px;
+      width: 120px;
+      height: 80px;
+      z-index: 3;
       pointer-events: none;
     }
-    .garland-left {
-      left: 1px;
-      background-image: 
-        radial-gradient(circle at 11px 12px, #FFA800 6px, #E65100 8px, transparent 9px),
-        radial-gradient(circle at 11px 26px, #FFD54F 5px, #FF8F00 7px, transparent 8px),
-        radial-gradient(circle at 11px 40px, #E57373 5px, #C2185B 7px, transparent 8px);
+    .corner-top-left {
+      top: 4px;
+      left: 4px;
     }
-    .garland-right {
-      right: 1px;
-      background-image: 
-        radial-gradient(circle at 11px 12px, #FFA800 6px, #E65100 8px, transparent 9px),
-        radial-gradient(circle at 11px 26px, #FFD54F 5px, #FF8F00 7px, transparent 8px),
-        radial-gradient(circle at 11px 40px, #E57373 5px, #C2185B 7px, transparent 8px);
+    .corner-top-right {
+      top: 4px;
+      right: 4px;
+      transform: scaleX(-1);
+    }
+
+    /* Side Pastel Floral Vines */
+    .side-vine {
+      position: absolute;
+      top: 80px;
+      bottom: 25px;
+      width: 32px;
+      z-index: 2;
+      pointer-events: none;
+      background-repeat: repeat-y;
+      background-size: 32px 110px;
+    }
+    .side-vine-left {
+      left: 4px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 110'%3E%3Cpath d='M10 8 Q18 30 8 55 T16 102' fill='none' stroke='%23ADC9A5' stroke-width='1.6'/%3E%3Cellipse cx='5' cy='18' rx='4.5' ry='2.2' fill='%2392B789' transform='rotate(-25 5 18)'/%3E%3Cellipse cx='21' cy='38' rx='5' ry='2.5' fill='%2392B789' transform='rotate(20 21 38)'/%3E%3Cellipse cx='7' cy='72' rx='4.5' ry='2.2' fill='%2392B789' transform='rotate(-30 7 72)'/%3E%3Cellipse cx='22' cy='92' rx='5' ry='2.4' fill='%2392B789' transform='rotate(15 22 92)'/%3E%3Ccircle cx='13' cy='25' r='6.5' fill='%23FAD4C0'/%3E%3Ccircle cx='13' cy='25' r='4' fill='%23F4B598'/%3E%3Ccircle cx='13' cy='25' r='1.8' fill='%23DE8D6C'/%3E%3Ccircle cx='20' cy='46' r='3.5' fill='%23FFFFFF' stroke='%23E8D0C3' stroke-width='0.8'/%3E%3Ccircle cx='20' cy='46' r='1' fill='%23F0B89C'/%3E%3Ccircle cx='10' cy='62' r='7' fill='%23FBC4CC'/%3E%3Ccircle cx='10' cy='62' r='4.5' fill='%23F39BA9'/%3E%3Ccircle cx='10' cy='62' r='2' fill='%23DB6F80'/%3E%3Ccircle cx='18' cy='82' r='3.5' fill='%23FFFFFF' stroke='%23E8D0C3' stroke-width='0.8'/%3E%3Ccircle cx='18' cy='82' r='1' fill='%23F0B89C'/%3E%3Ccircle cx='12' cy='100' r='5.5' fill='%23FAD4C0'/%3E%3Ccircle cx='12' cy='100' r='3.2' fill='%23F4B598'/%3E%3C/svg%3E");
+    }
+    .side-vine-right {
+      right: 4px;
+      transform: scaleX(-1);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 110'%3E%3Cpath d='M10 8 Q18 30 8 55 T16 102' fill='none' stroke='%23ADC9A5' stroke-width='1.6'/%3E%3Cellipse cx='5' cy='18' rx='4.5' ry='2.2' fill='%2392B789' transform='rotate(-25 5 18)'/%3E%3Cellipse cx='21' cy='38' rx='5' ry='2.5' fill='%2392B789' transform='rotate(20 21 38)'/%3E%3Cellipse cx='7' cy='72' rx='4.5' ry='2.2' fill='%2392B789' transform='rotate(-30 7 72)'/%3E%3Cellipse cx='22' cy='92' rx='5' ry='2.4' fill='%2392B789' transform='rotate(15 22 92)'/%3E%3Ccircle cx='13' cy='25' r='6.5' fill='%23FAD4C0'/%3E%3Ccircle cx='13' cy='25' r='4' fill='%23F4B598'/%3E%3Ccircle cx='13' cy='25' r='1.8' fill='%23DE8D6C'/%3E%3Ccircle cx='20' cy='46' r='3.5' fill='%23FFFFFF' stroke='%23E8D0C3' stroke-width='0.8'/%3E%3Ccircle cx='20' cy='46' r='1' fill='%23F0B89C'/%3E%3Ccircle cx='10' cy='62' r='7' fill='%23FBC4CC'/%3E%3Ccircle cx='10' cy='62' r='4.5' fill='%23F39BA9'/%3E%3Ccircle cx='10' cy='62' r='2' fill='%23DB6F80'/%3E%3Ccircle cx='18' cy='82' r='3.5' fill='%23FFFFFF' stroke='%23E8D0C3' stroke-width='0.8'/%3E%3Ccircle cx='18' cy='82' r='1' fill='%23F0B89C'/%3E%3Ccircle cx='12' cy='100' r='5.5' fill='%23FAD4C0'/%3E%3Ccircle cx='12' cy='100' r='3.2' fill='%23F4B598'/%3E%3C/svg%3E");
     }
 
     .main-body {
       position: relative;
-      z-index: 3;
+      z-index: 4;
       text-align: center;
-      padding: 0 4px;
+      padding: 0 10px;
     }
 
     /* Lord Ganesha Image */
@@ -235,7 +248,7 @@
       letter-spacing: 3px;
       font-weight: 800;
       text-transform: uppercase;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     /* Couple Script Names */
@@ -256,10 +269,10 @@
     .hashtag-line span {
       display: inline-block;
       margin: 0 4px;
-      color: #B58428;
+      color: #D4A738;
     }
 
-    /* Couple Photo with Floral Flankers */
+    /* Couple Photo Circle */
     .couple-photo-wrapper {
       position: relative;
       width: 175px;
@@ -288,7 +301,7 @@
       color: #4C4339;
       line-height: 1.55;
       margin-bottom: 18px;
-      padding: 0 8px;
+      padding: 0 6px;
     }
 
     /* Countdown Style */
@@ -406,9 +419,9 @@
       transform: scale(0.98);
     }
     .btn-maps {
-      background: #9E1F3B;
+      background: #98223B;
       color: #FFFFFF;
-      box-shadow: 0 4px 12px rgba(158, 31, 59, 0.28);
+      box-shadow: 0 4px 12px rgba(152, 34, 59, 0.28);
     }
     .btn-whatsapp {
       background: #179C52;
@@ -498,8 +511,49 @@
   <div class="invitation-container">
     <div class="card-inner">
       
-      <div class="garland-left"></div>
-      <div class="garland-right"></div>
+      <!-- Top-Left Corner Flower Bunch -->
+      <svg class="corner-garland corner-top-left" viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="28" cy="18" rx="8" ry="4" fill="#92B789" transform="rotate(-30 28 18)" />
+        <ellipse cx="58" cy="14" rx="9" ry="4" fill="#A5C69C" transform="rotate(-15 58 14)" />
+        <ellipse cx="88" cy="16" rx="8" ry="3.5" fill="#92B789" transform="rotate(10 88 16)" />
+        <ellipse cx="16" cy="42" rx="4" ry="8" fill="#A5C69C" transform="rotate(-10 16 42)" />
+        <!-- Big Pink Rose Corner -->
+        <circle cx="22" cy="22" r="14" fill="#FBC4CC" />
+        <circle cx="22" cy="22" r="9" fill="#F39BA9" />
+        <circle cx="22" cy="22" r="4.5" fill="#DB6F80" />
+        <!-- Peach Rose -->
+        <circle cx="48" cy="20" r="11" fill="#FAD4C0" />
+        <circle cx="48" cy="20" r="7" fill="#F4B598" />
+        <circle cx="48" cy="20" r="3" fill="#DE8D6C" />
+        <!-- Baby Jasmine / White Bud -->
+        <circle cx="70" cy="22" r="6" fill="#FFFFFF" stroke="#E5D2C7" stroke-width="1" />
+        <circle cx="70" cy="22" r="2" fill="#E8BFA8" />
+        <!-- Tiny Pink Rosebud -->
+        <circle cx="18" cy="46" r="8" fill="#FBC4CC" />
+        <circle cx="18" cy="46" r="4.5" fill="#F39BA9" />
+      </svg>
+
+      <!-- Top-Right Corner Flower Bunch -->
+      <svg class="corner-garland corner-top-right" viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="28" cy="18" rx="8" ry="4" fill="#92B789" transform="rotate(-30 28 18)" />
+        <ellipse cx="58" cy="14" rx="9" ry="4" fill="#A5C69C" transform="rotate(-15 58 14)" />
+        <ellipse cx="88" cy="16" rx="8" ry="3.5" fill="#92B789" transform="rotate(10 88 16)" />
+        <ellipse cx="16" cy="42" rx="4" ry="8" fill="#A5C69C" transform="rotate(-10 16 42)" />
+        <circle cx="22" cy="22" r="14" fill="#FBC4CC" />
+        <circle cx="22" cy="22" r="9" fill="#F39BA9" />
+        <circle cx="22" cy="22" r="4.5" fill="#DB6F80" />
+        <circle cx="48" cy="20" r="11" fill="#FAD4C0" />
+        <circle cx="48" cy="20" r="7" fill="#F4B598" />
+        <circle cx="48" cy="20" r="3" fill="#DE8D6C" />
+        <circle cx="70" cy="22" r="6" fill="#FFFFFF" stroke="#E5D2C7" stroke-width="1" />
+        <circle cx="70" cy="22" r="2" fill="#E8BFA8" />
+        <circle cx="18" cy="46" r="8" fill="#FBC4CC" />
+        <circle cx="18" cy="46" r="4.5" fill="#F39BA9" />
+      </svg>
+
+      <!-- Side Flowing Vines -->
+      <div class="side-vine side-vine-left"></div>
+      <div class="side-vine side-vine-right"></div>
 
       <div class="main-body">
 
@@ -594,7 +648,7 @@
         <div class="footer-host">
           <em>With love and blessings from the families of</em>
           <div class="footer-couple-name">Sampath &amp; Harika</div>
-          <div style="font-size:0.9rem; margin-top:3px; color:#9E1F3B;">❤️</div>
+          <div style="font-size:0.9rem; margin-top:3px; color:#98223B;">❤️</div>
         </div>
 
       </div>
@@ -626,7 +680,7 @@
           particleCount: 90,
           spread: 80,
           origin: { y: 0.6 },
-          colors: ['#E5BA6A', '#9E1F3B', '#FFA726', '#FFFFFF']
+          colors: ['#E5BA6A', '#98223B', '#FFA726', '#FFFFFF']
         });
       }
       if (audio) {
