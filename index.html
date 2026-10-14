@@ -83,11 +83,11 @@
       50% { transform: translateY(10px); }
     }
 
-    /* Glowing Mandala & Heart Wax Seal */
+    /* Glowing Mandala Wrap */
     .mandala-seal-wrap {
       position: relative;
-      width: 180px;
-      height: 180px;
+      width: 190px;
+      height: 190px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -105,40 +105,54 @@
       to { transform: rotate(360deg); }
     }
 
-    /* Golden Heart Seal Button */
-    .wax-seal-heart-btn {
+    /* PURE CSS EMBOSSED GOLDEN LOVE HEART SEAL */
+    .heart-seal-wrapper {
       position: relative;
-      width: 125px;
-      height: 125px;
+      width: 120px;
+      height: 110px;
+      z-index: 2;
       display: flex;
       align-items: center;
       justify-content: center;
-      cursor: pointer;
-      z-index: 2;
-      transition: transform 0.25s ease, filter 0.25s ease;
-      filter: drop-shadow(0 10px 22px rgba(0,0,0,0.55));
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.6));
+      animation: heartPulse 2.2s infinite ease-in-out;
     }
-    .wax-seal-heart-btn:hover {
-      transform: scale(1.08);
-      filter: drop-shadow(0 12px 28px rgba(240, 201, 135, 0.65));
+    @keyframes heartPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.06); }
     }
-    .wax-seal-heart-btn svg {
-      width: 100%;
-      height: 100%;
-    }
-    .seal-monogram-heart {
+
+    /* Outer Heart Base (Gold Border) */
+    .heart-outer {
       position: absolute;
-      top: 48%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      width: 120px;
+      height: 110px;
+      background: radial-gradient(circle at 50% 35%, #FFF0C9 0%, #D8A952 50%, #7D5114 100%);
+      clip-path: path('M60 105 C20 75 0 50 0 28 C0 10 14 0 30 0 C43 0 54 8 60 18 C66 8 77 0 90 0 C106 0 120 10 120 28 C120 50 100 75 60 105 Z');
+    }
+
+    /* Inner Embossed Heart */
+    .heart-inner {
+      position: absolute;
+      width: 110px;
+      height: 100px;
+      background: radial-gradient(circle at 50% 30%, #FFE9B8 0%, #D4A548 55%, #9E7422 100%);
+      clip-path: path('M55 96 C18 69 0 46 0 26 C0 9 13 0 28 0 C39 0 50 7 55 16 C60 7 71 0 82 0 C97 0 110 9 110 26 C110 46 92 69 55 96 Z');
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: inset 0 2px 5px rgba(255,255,255,0.7);
+    }
+
+    .heart-monogram {
       font-family: 'Cinzel', serif;
       font-size: 1.55rem;
       font-weight: 800;
       letter-spacing: 2px;
       color: #4C3205;
-      text-shadow: 0 1px 2px rgba(255,255,255,0.7);
+      text-shadow: 0 1px 1px rgba(255,255,255,0.6);
+      margin-top: 10px;
       pointer-events: none;
-      white-space: nowrap;
     }
 
     /* Main Invitation Container */
@@ -488,7 +502,7 @@
   <!-- Audio Element configured with your exact file name -->
   <audio id="weddingAudio" src="Best Engagement invitation telugu.mp3" loop preload="auto"></audio>
 
-  <!-- Royal Maroon Envelope Opening Overlay with Bouncing Arrow & Heart Wax Seal -->
+  <!-- Royal Maroon Envelope Opening Overlay with Bouncing Arrow & Embossed Heart Seal -->
   <div class="envelope-screen" id="envelopeScreen" onclick="openEnvelope()">
     <div class="envelope-ganesha">ॐ</div>
     <div class="envelope-shloka">|| श्री गणेशाय नमः ||</div>
@@ -507,32 +521,14 @@
       <path d="M12 2L12 18M12 18L5 11M12 18L19 11" stroke="url(#goldArr)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
 
-    <!-- Glowing Mandala with Love Heart Wax Seal -->
+    <!-- Glowing Mandala with Love Heart Seal -->
     <div class="mandala-seal-wrap">
       <div class="mandala-bg"></div>
-      <div class="wax-seal-heart-btn">
-        <svg viewBox="0 0 100 95" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="heartGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#FCE5B4"/>
-              <stop offset="35%" stop-color="#E5BA6A"/>
-              <stop offset="70%" stop-color="#C5933E"/>
-              <stop offset="100%" stop-color="#8F6218"/>
-            </linearGradient>
-            <radialGradient id="heartInnerShine" cx="50%" cy="40%" r="55%">
-              <stop offset="0%" stop-color="#FFF6D8" stop-opacity="0.9"/>
-              <stop offset="60%" stop-color="#E1B460" stop-opacity="0.1"/>
-              <stop offset="100%" stop-color="#7A4E0B" stop-opacity="0.5"/>
-            </radialGradient>
-          </defs>
-          <!-- Outer Embossed Heart Border -->
-          <path d="M50 88 C25 68, 5 50, 5 28 C5 12, 18 3, 33 3 C41 3, 47 7, 50 14 C53 7, 59 3, 67 3 C82 3, 95 12, 95 28 C95 50, 75 68, 50 88 Z" 
-                fill="url(#heartGoldGrad)" stroke="#744D0F" stroke-width="2.5"/>
-          <!-- Inner Heart Bevel Accent -->
-          <path d="M50 82 C28 64, 11 47, 11 28 C11 15, 21 8, 33 8 C40 8, 46 12, 50 18 C54 12, 60 8, 67 8 C79 8, 89 15, 89 28 C89 47, 72 64, 50 82 Z" 
-                fill="url(#heartInnerShine)" stroke="rgba(255,255,255,0.4)" stroke-width="1.2"/>
-        </svg>
-        <div class="seal-monogram-heart">S&amp;H</div>
+      <div class="heart-seal-wrapper">
+        <div class="heart-outer"></div>
+        <div class="heart-inner">
+          <div class="heart-monogram">S&amp;H</div>
+        </div>
       </div>
     </div>
   </div>
