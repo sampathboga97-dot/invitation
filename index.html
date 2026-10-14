@@ -3,38 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Engagement Invitation | Harika &amp; Sampath</title>
+  <title>Engagement Ceremony | Sampath &amp; Harika</title>
   <meta name="description" content="You are cordially invited to celebrate the Engagement Ceremony of Sampath &amp; Harika on Friday, October 30, 2026.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Great+Vibes&family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <style>
     :root {
-      --bg-cream: #FAF6F0;
-      --card-bg: #FFFFFF;
-      --gold-primary: #C5A059;
-      --gold-dark: #8F6B23;
-      --rose-deep: #B74B62;
-      --text-dark: #2D2727;
-      --text-muted: #665C54;
-      --border-gold: #E8D5B5;
+      --cream-bg: #FBF6EE;
+      --card-bg: #FFFDF9;
+      --navy-title: #1E2843;
+      --rose-maroon: #A13C4D;
+      --gold-dark: #A37C32;
+      --gold-border: #E8D3B0;
+      --text-muted: #4B463F;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      background-color: var(--bg-cream);
-      font-family: 'Poppins', sans-serif;
-      color: var(--text-dark);
+      background-color: #F3EBDD;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--text-muted);
       min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 16px;
+      padding: 14px;
     }
+
+    /* Envelope Opening Layer */
     .envelope-screen {
       position: fixed;
       inset: 0;
-      background: radial-gradient(circle, #fcf8f2 0%, #ecdcc9 100%);
+      background: radial-gradient(circle, #FCF8F2 0%, #ECDCC9 100%);
       z-index: 1000;
       display: flex;
       flex-direction: column;
@@ -52,7 +53,7 @@
       width: 320px;
       height: 220px;
       background: #F4E8D7;
-      border-radius: 8px;
+      border-radius: 10px;
       box-shadow: 0 20px 45px rgba(0,0,0,0.18);
       cursor: pointer;
       display: flex;
@@ -87,7 +88,7 @@
       justify-content: center;
       color: #fff;
       font-size: 11px;
-      font-weight: 600;
+      font-weight: 700;
       z-index: 4;
       text-align: center;
       cursor: pointer;
@@ -98,178 +99,255 @@
       50% { transform: scale(1.06); }
     }
     .envelope-instruction {
-      margin-top: 28px;
+      margin-top: 26px;
       font-family: 'Playfair Display', serif;
       font-size: 1.15rem;
       color: var(--gold-dark);
       font-style: italic;
     }
-    .invitation-card {
+
+    /* Main Invitation Container */
+    .invitation-container {
       width: 100%;
-      max-width: 520px;
-      background: var(--card-bg);
-      border-radius: 20px;
-      padding: 32px 22px;
-      box-shadow: 0 16px 40px rgba(139, 108, 43, 0.12);
-      border: 1px solid var(--border-gold);
-      text-align: center;
+      max-width: 480px;
       position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(92, 64, 18, 0.18);
+      background: #FFFFFF;
+      border: 1px solid var(--gold-border);
     }
-    .ganesha-symbol {
-      font-size: 1.7rem;
-      color: var(--rose-deep);
-      margin-bottom: 4px;
+
+    /* Garland Background Frame */
+    .floral-frame {
+      position: relative;
+      background: radial-gradient(circle at center, #FFFCF7 60%, #F5ECE0 100%);
+      padding: 34px 24px 30px;
+      border: 12px solid #FDFBF7;
     }
+    .floral-frame::before {
+      content: "";
+      position: absolute;
+      inset: 6px;
+      border: 1.5px dashed #D6B986;
+      border-radius: 12px;
+      pointer-events: none;
+    }
+
+    /* Lord Ganesha Image */
+    .ganesha-wrapper {
+      width: 105px;
+      height: 75px;
+      margin: 0 auto 6px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--gold-border);
+      box-shadow: 0 4px 10px rgba(163, 124, 50, 0.15);
+      background: #FFFFFF;
+    }
+    .ganesha-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
     .shloka {
       font-size: 0.95rem;
       letter-spacing: 2px;
       color: var(--gold-dark);
-      font-weight: 600;
-      margin-bottom: 12px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 8px;
     }
-    .event-type-badge {
-      font-size: 0.8rem;
-      letter-spacing: 2px;
+    .sub-head {
+      font-size: 0.76rem;
+      letter-spacing: 3px;
       text-transform: uppercase;
-      color: #7A6952;
+      color: #6C5D4B;
+      font-weight: 600;
+      text-align: center;
       margin-bottom: 4px;
     }
     .main-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.45rem;
-      color: var(--text-dark);
+      font-family: 'Cinzel', serif;
+      font-size: 1.4rem;
+      color: var(--navy-title);
       letter-spacing: 3px;
-      font-weight: 700;
+      font-weight: 800;
+      text-align: center;
       text-transform: uppercase;
-      margin-bottom: 14px;
+      margin-bottom: 10px;
     }
+
+    /* Couple Names */
     .couple-names {
       font-family: 'Great Vibes', cursive;
-      font-size: 3.2rem;
-      color: var(--rose-deep);
-      line-height: 1.2;
-      margin: 10px 0 4px;
+      font-size: 3.3rem;
+      color: var(--rose-maroon);
+      line-height: 1.15;
+      text-align: center;
+      margin: 4px 0 2px;
     }
     .hashtag {
-      font-size: 0.95rem;
+      font-size: 1rem;
       color: var(--gold-dark);
-      font-weight: 600;
-      letter-spacing: 1.5px;
-      margin-bottom: 16px;
-    }
-    .rings-svg {
-      width: 90px;
-      height: 60px;
-      margin: 0 auto 14px;
-      display: block;
-    }
-    .invite-text {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      font-style: italic;
-      font-family: 'Playfair Display', serif;
-      margin-bottom: 22px;
-    }
-    .countdown-container {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 8px;
-      background: #FDF9F3;
-      padding: 14px 10px;
-      border-radius: 12px;
-      border: 1px dashed var(--border-gold);
-      margin-bottom: 24px;
-    }
-    .time-num {
-      font-size: 1.4rem;
       font-weight: 700;
-      color: var(--rose-deep);
-      line-height: 1;
-    }
-    .time-label {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-top: 4px;
-    }
-    .details-box {
-      background: #FAF7F2;
-      border-radius: 14px;
-      padding: 18px 14px;
-      margin-bottom: 22px;
-      border: 1px solid #EFE4D2;
-    }
-    .detail-item {
+      letter-spacing: 1.5px;
+      text-align: center;
       margin-bottom: 14px;
     }
-    .detail-item:last-child {
+
+    /* Couple Illustration */
+    .couple-portrait-wrapper {
+      width: 180px;
+      height: 180px;
+      margin: 0 auto 16px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid #F6E6CF;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+      background: #FFF;
+    }
+    .couple-portrait-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Entwined Rings SVG Motif */
+    .rings-svg {
+      width: 76px;
+      height: 48px;
+      margin: 0 auto 12px;
+      display: block;
+    }
+
+    .invitation-quote {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 0.98rem;
+      color: #554C42;
+      text-align: center;
+      line-height: 1.55;
+      margin-bottom: 22px;
+      padding: 0 10px;
+    }
+
+    /* Countdown Card Style */
+    .countdown-box {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: #FAF3E8;
+      border-radius: 16px;
+      padding: 16px 8px;
+      border: 1px solid #EFE2CF;
+      box-shadow: inset 0 2px 4px rgba(255,255,255,0.8), 0 4px 12px rgba(163, 124, 50, 0.08);
+      margin-bottom: 24px;
+      text-align: center;
+    }
+    .count-number {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--rose-maroon);
+      line-height: 1;
+    }
+    .count-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #7A6953;
+      text-transform: uppercase;
+      margin-top: 6px;
+    }
+
+    /* Event Details */
+    .details-card {
+      text-align: center;
+      background: #FAF5ED;
+      border-radius: 16px;
+      padding: 20px 16px;
+      border: 1px solid #EFE2CD;
+      margin-bottom: 20px;
+    }
+    .detail-heading {
+      font-size: 0.74rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--gold-dark);
+      margin-bottom: 5px;
+    }
+    .detail-text {
+      font-size: 0.96rem;
+      color: var(--navy-title);
+      font-weight: 600;
+      line-height: 1.45;
+      margin-bottom: 14px;
+    }
+    .detail-text:last-child {
       margin-bottom: 0;
     }
-    .detail-label {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--gold-dark);
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-    .detail-value {
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: var(--text-dark);
-      line-height: 1.45;
-    }
-    .btn-group {
+
+    /* Action Buttons */
+    .button-group {
       display: flex;
       flex-direction: column;
       gap: 10px;
-      margin-top: 18px;
     }
-    .action-btn {
+    .primary-btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      padding: 12px 20px;
+      padding: 13px 20px;
       border-radius: 30px;
+      font-size: 0.94rem;
+      font-weight: 600;
       text-decoration: none;
-      font-size: 0.92rem;
-      font-weight: 500;
-      transition: all 0.2s ease;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
       cursor: pointer;
       border: none;
     }
+    .primary-btn:active {
+      transform: scale(0.98);
+    }
     .btn-maps {
-      background: #B74B62;
-      color: #fff;
+      background: var(--rose-maroon);
+      color: #FFFFFF;
+      box-shadow: 0 4px 12px rgba(161, 60, 77, 0.28);
     }
     .btn-whatsapp {
       background: #25D366;
-      color: #fff;
+      color: #FFFFFF;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
     }
     .btn-call {
-      background: #FAF6F0;
-      color: var(--text-dark);
-      border: 1px solid var(--border-gold);
+      background: #FFFFFF;
+      color: var(--navy-title);
+      border: 1px solid var(--gold-border);
     }
-    .host-footer {
+
+    .footer-host {
+      text-align: center;
       margin-top: 22px;
       padding-top: 16px;
-      border-top: 1px solid #EEE2D0;
-      font-size: 0.85rem;
-      color: var(--text-muted);
+      border-top: 1px solid #EADCC7;
+      font-size: 0.84rem;
+      color: #6C5D4B;
       line-height: 1.5;
     }
+
+    /* Music Toggle Button */
     .audio-toggle {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      width: 44px;
-      height: 44px;
+      width: 46px;
+      height: 46px;
       background: #FFFFFF;
-      border: 1px solid var(--border-gold);
+      border: 1px solid var(--gold-border);
       border-radius: 50%;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.15);
       cursor: pointer;
       display: flex;
       align-items: center;
@@ -281,6 +359,7 @@
 </head>
 <body>
 
+  <!-- Wax Seal Envelope Opening -->
   <div class="envelope-screen" id="envelopeScreen" onclick="openEnvelope()">
     <div class="envelope-wrapper">
       <div class="envelope-flap" id="envelopeFlap"></div>
@@ -292,89 +371,120 @@
     <div class="envelope-instruction">Tap the wax seal to open invitation ✉️</div>
   </div>
 
-  <button class="audio-toggle" id="audioToggle" onclick="toggleAudio()" title="Play/Mute Festive Notes">🎵</button>
+  <button class="audio-toggle" id="audioToggle" onclick="toggleAudio()" title="Play Festive Melodies">🎵</button>
 
-  <main class="invitation-card">
-    <div class="ganesha-symbol">ॐ</div>
-    <div class="shloka">|| श्री गणेशाय नमः ||</div>
-    
-    <div class="event-type-badge">Please Join Us For An</div>
-    <h1 class="main-title">Engagement Ceremony</h1>
-
-    <div class="couple-names">Sampath &amp; Harika</div>
-    <div class="hashtag">#SamRika</div>
-
-    <svg class="rings-svg" viewBox="0 0 100 65" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="38" cy="35" r="22" stroke="url(#goldGrad)" stroke-width="5" />
-      <circle cx="62" cy="35" r="22" stroke="url(#goldGrad)" stroke-width="5" />
-      <circle cx="62" cy="13" r="4" fill="#C5A059" />
-      <defs>
-        <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stop-color="#E5BA6A" />
-          <stop offset="50%" stop-color="#C5A059" />
-          <stop offset="100%" stop-color="#8F6B23" />
-        </linearGradient>
-      </defs>
-    </svg>
-
-    <p class="invite-text">
-      With joy in our hearts, we invite you to celebrate our engagement as we begin our new journey together.
-    </p>
-
-    <div class="countdown-container">
-      <div>
-        <div class="time-num" id="days">--</div>
-        <div class="time-label">Days</div>
+  <div class="invitation-container">
+    <div class="floral-frame">
+      
+      <!-- Lord Ganesha Header Image -->
+      <div class="ganesha-wrapper">
+        <img id="ganeshaImg" src="ganesha.jpg" alt="Lord Ganesha" onerror="handleGaneshaFallback(this)">
       </div>
-      <div>
-        <div class="time-num" id="hours">--</div>
-        <div class="time-label">Hours</div>
-      </div>
-      <div>
-        <div class="time-num" id="minutes">--</div>
-        <div class="time-label">Mins</div>
-      </div>
-      <div>
-        <div class="time-num" id="seconds">--</div>
-        <div class="time-label">Secs</div>
-      </div>
-    </div>
+      <div class="shloka">|| श्री गणेशाय नमः ||</div>
 
-    <div class="details-box">
-      <div class="detail-item">
-        <div class="detail-label">Date &amp; Time</div>
-        <div class="detail-value">Friday, 30 October 2026<br>at 11:00 AM</div>
+      <div class="sub-head">Please Join Us For An</div>
+      <h1 class="main-title">Engagement Ceremony</h1>
+
+      <!-- Couple Names & Hashtag -->
+      <div class="couple-names">Sampath &amp; Harika</div>
+      <div class="hashtag">#SamRika</div>
+
+      <!-- Couple Portrait Photo -->
+      <div class="couple-portrait-wrapper">
+        <img id="coupleImg" src="couple.png" alt="Sampath & Harika" onerror="handleCoupleFallback(this)">
       </div>
-      <div class="detail-item">
-        <div class="detail-label">Venue</div>
-        <div class="detail-value">
+
+      <!-- Golden Intertwined Rings Motif -->
+      <svg class="rings-svg" viewBox="0 0 100 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="38" cy="35" r="22" stroke="url(#goldRings)" stroke-width="5" />
+        <circle cx="62" cy="35" r="22" stroke="url(#goldRings)" stroke-width="5" />
+        <circle cx="62" cy="13" r="4" fill="#C5A059" />
+        <defs>
+          <linearGradient id="goldRings" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#E5BA6A" />
+            <stop offset="50%" stop-color="#C5A059" />
+            <stop offset="100%" stop-color="#8F6B23" />
+          </linearGradient>
+        </defs>
+      </svg>
+
+      <p class="invitation-quote">
+        With joy in our hearts, we invite you to celebrate our engagement as we begin our new journey together.
+      </p>
+
+      <!-- Countdown Clock -->
+      <div class="countdown-box">
+        <div>
+          <div class="count-number" id="days">--</div>
+          <div class="count-label">Days</div>
+        </div>
+        <div>
+          <div class="count-number" id="hours">--</div>
+          <div class="count-label">Hours</div>
+        </div>
+        <div>
+          <div class="count-number" id="minutes">--</div>
+          <div class="count-label">Mins</div>
+        </div>
+        <div>
+          <div class="count-number" id="seconds">--</div>
+          <div class="count-label">Secs</div>
+        </div>
+      </div>
+
+      <!-- Date, Time & Venue -->
+      <div class="details-card">
+        <div class="detail-heading">Date &amp; Time</div>
+        <div class="detail-text">
+          Friday, 30 October 2026<br>
+          at 11:00 AM
+        </div>
+
+        <div class="detail-heading">Venue</div>
+        <div class="detail-text">
           3-167/116/P, Sri Ram Nagar Colony,<br>
           Beside Kidzee School, Suraram,<br>
           Hyderabad, Telangana
         </div>
       </div>
-    </div>
 
-    <div class="btn-group">
-      <a class="action-btn btn-maps" href="https://www.google.com/maps/search/?api=1&amp;query=Sri+Ram+Nagar+Colony+Suraram+Hyderabad" target="_blank">
-        📍 Get Directions (Google Maps)
-      </a>
-      <a class="action-btn btn-whatsapp" href="https://wa.me/917675975990?text=Congratulations%20Sampath%20%26%20Harika!%20We%20will%20be%20attending%20your%20Engagement%20Ceremony." target="_blank">
-        💬 RSVP via WhatsApp (7675975990)
-      </a>
-      <a class="action-btn btn-call" href="tel:+917675975990">
-        📞 Call +91 76759 75990
-      </a>
-    </div>
+      <!-- Action Buttons -->
+      <div class="button-group">
+        <a class="primary-btn btn-maps" href="https://www.google.com/maps/search/?api=1&amp;query=Sri+Ram+Nagar+Colony+Suraram+Hyderabad" target="_blank">
+          📍 Get Directions (Google Maps)
+        </a>
+        <a class="primary-btn btn-whatsapp" href="https://wa.me/917675975990?text=Congratulations%20Sampath%20%26%20Harika!%20We%20will%20be%20attending%20your%20Engagement%20Ceremony." target="_blank">
+          💬 RSVP via WhatsApp (7675975990)
+        </a>
+        <a class="primary-btn btn-call" href="tel:+917675975990">
+          📞 Call +91 76759 75990
+        </a>
+      </div>
 
-    <div class="host-footer">
-      <strong>Please Confirm Your Attendance</strong><br>
-      RSVP By October 20th, 2026<br><br>
-      <em>Hosted by the Families of<br><strong>SAMPATH &amp; HARIKA</strong></em>
+      <!-- Host & Confirmation Footer -->
+      <div class="footer-host">
+        <strong>PLEASE CONFIRM YOUR ATTENDANCE</strong><br>
+        PLEASE RSVP BY OCTOBER 20TH, 2026<br><br>
+        <em>Hosted by the Families of<br><strong>SAMPATH &amp; HARIKA</strong></em>
+      </div>
+
     </div>
-  </main>
+  </div>
 
   <script>
+    // Automatic fallback for image file extensions
+    function handleGaneshaFallback(img) {
+      if (img.src.indexOf('ganesha.jpg.jfif') === -1) {
+        img.src = 'ganesha.jpg.jfif';
+      }
+    }
+    function handleCoupleFallback(img) {
+      if (img.src.indexOf('couple.png.jpg') === -1) {
+        img.src = 'couple.png.jpg';
+      }
+    }
+
+    // Envelope Opening Animation
     function openEnvelope() {
       const flap = document.getElementById('envelopeFlap');
       const screen = document.getElementById('envelopeScreen');
@@ -382,12 +492,18 @@
       setTimeout(() => {
         screen.classList.add('opened');
         if (typeof confetti === 'function') {
-          confetti({ particleCount: 75, spread: 80, origin: { y: 0.6 } });
+          confetti({
+            particleCount: 85,
+            spread: 80,
+            origin: { y: 0.6 },
+            colors: ['#E5BA6A', '#A13C4D', '#F48225', '#FFFFFF']
+          });
         }
         startCelebrationSynth();
       }, 500);
     }
 
+    // Live Countdown Timer to Oct 30, 2026, 11:00 AM IST
     const eventTime = new Date('2026-10-30T11:00:00+05:30').getTime();
     function updateCountdown() {
       const now = new Date().getTime();
@@ -411,10 +527,11 @@
     setInterval(updateCountdown, 1000);
     updateCountdown();
 
+    // Procedural Festive Notes Synthesizer
     let audioCtx = null;
     let isPlaying = false;
     let noteTimer = null;
-    const ragaNotes = [261.63, 293.66, 329.63, 392.00, 440.00, 523.25];
+    const notes = [261.63, 293.66, 329.63, 392.00, 440.00, 523.25];
 
     function playNote(freq) {
       if (!audioCtx) return;
@@ -437,7 +554,7 @@
       document.getElementById('audioToggle').innerText = '🔊';
       let i = 0;
       noteTimer = setInterval(() => {
-        playNote(ragaNotes[i % ragaNotes.length]);
+        playNote(notes[i % notes.length]);
         i++;
       }, 700);
     }
