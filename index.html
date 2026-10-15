@@ -40,8 +40,9 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: space-between;
-      padding: clamp(14px, 3vh, 26px) 16px clamp(16px, 3.5vh, 28px);
+      justify-content: center;
+      padding: 20px 16px;
+      gap: clamp(12px, 2.5vh, 22px);
       text-align: center;
       cursor: pointer;
       overflow: hidden;
@@ -59,119 +60,104 @@
       pointer-events: none;
     }
 
-    /* FAINT GOLD MANDALA BACKDROP */
+    /* FAINT GOLD MANDALA WATERMARK */
     .mandala-watermark {
       position: absolute;
-      top: -30px;
+      top: 50%;
       left: 50%;
-      transform: translateX(-50%);
+      transform: translate(-50%, -50%);
       width: 320px;
       height: 320px;
-      opacity: 0.12;
+      opacity: 0.10;
       pointer-events: none;
-      animation: slowRotate 45s linear infinite;
+      animation: slowRotate 50s linear infinite;
     }
     @keyframes slowRotate {
-      from { transform: translateX(-50%) rotate(0deg); }
-      to { transform: translateX(-50%) rotate(360deg); }
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to { transform: translate(-50%, -50%) rotate(360deg); }
     }
 
-    /* TOP SACRED CREST */
+    /* TOP SACRED BLOCK */
     .top-sacred-block {
       position: relative;
       z-index: 2;
-      animation: fadeDown 1s 0.2s ease forwards;
-      opacity: 0;
-    }
-    @keyframes fadeDown {
-      from { opacity: 0; transform: translateY(-8px); }
-      to { opacity: 1; transform: translateY(0); }
     }
     .sacred-om {
-      font-size: clamp(1.8rem, 4.5vh, 2.3rem);
+      font-size: clamp(1.6rem, 3.8vh, 2rem);
       line-height: 1;
       color: #F3DCAC;
       text-shadow: 0 0 16px rgba(243, 220, 172, 0.45);
-      margin-bottom: 3px;
+      margin-bottom: 2px;
     }
     .sacred-shloka {
-      font-size: clamp(0.78rem, 2vh, 0.94rem);
+      font-size: clamp(0.76rem, 1.8vh, 0.88rem);
       letter-spacing: 3px;
       color: #E2C289;
       font-weight: 600;
     }
     .sacred-divider {
-      width: clamp(200px, 70vw, 320px);
+      width: clamp(180px, 60vw, 260px);
       height: 1px;
       background: linear-gradient(90deg, transparent, #D7B16A, transparent);
-      margin: clamp(10px, 2vh, 16px) auto 0;
+      margin: 10px auto 0;
     }
 
-    /* CENTER EVENT INVITATION HEADER */
+    /* CENTER NAMES & ANNOUNCEMENT */
     .center-invite-block {
       position: relative;
       z-index: 2;
-      animation: fadeIn 1s 0.4s ease forwards;
-      opacity: 0;
-      margin: auto 0;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(6px); }
-      to { opacity: 1; transform: translateY(0); }
     }
     .intro-title {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(1.4rem, 3.4vh, 1.95rem);
+      font-size: clamp(1.3rem, 3vh, 1.7rem);
       font-weight: 700;
       color: #FFFFFF;
       letter-spacing: 0.5px;
-      margin-bottom: clamp(4px, 1vh, 6px);
+      margin-bottom: 4px;
     }
     .intro-sub {
-      font-size: clamp(0.68rem, 1.6vh, 0.78rem);
+      font-size: clamp(0.65rem, 1.4vh, 0.74rem);
       letter-spacing: 3px;
       text-transform: uppercase;
       color: #DEBE85;
       font-weight: 600;
-      margin-bottom: clamp(6px, 1.2vh, 10px);
+      margin-bottom: 6px;
     }
     .intro-names {
       font-family: 'Cinzel', serif;
-      font-size: clamp(1.55rem, 3.8vh, 2.25rem);
+      font-size: clamp(1.45rem, 3.4vh, 2rem);
       font-weight: 800;
       color: #F8E2B2;
       letter-spacing: 2px;
       line-height: 1.15;
-      text-shadow: 0 0 20px rgba(248, 226, 178, 0.35);
-      margin-bottom: clamp(6px, 1.2vh, 8px);
+      text-shadow: 0 0 18px rgba(248, 226, 178, 0.35);
+      margin-bottom: 6px;
     }
     .intro-tagline {
       font-family: 'Playfair Display', serif;
       font-style: italic;
-      font-size: clamp(0.85rem, 2vh, 1rem);
+      font-size: clamp(0.82rem, 1.8vh, 0.94rem);
       color: #E6CEAE;
     }
 
-    /* INTERACTIVE HEART & BOUNCING GUIDANCE BLOCK */
-    .bottom-seal-block {
+    /* CENTERED ELEVATED SEAL BLOCK */
+    .interactive-seal-block {
       position: relative;
       z-index: 2;
       display: flex;
       flex-direction: column;
       align-items: center;
-      animation: fadeIn 1s 0.6s ease forwards;
-      opacity: 0;
     }
 
-    /* HEART BUTTON WITH SHINE SWEEP */
+    /* COMPACT HEART SEAL (96px) */
     .heart-button-wrap {
       position: relative;
-      width: clamp(105px, 25vw, 125px);
-      height: clamp(105px, 25vw, 125px);
+      width: 96px;
+      height: 96px;
       border-radius: 50%;
-      border: 1.5px solid rgba(226, 194, 137, 0.65);
-      background: radial-gradient(circle, #6B0C22 0%, #3D0310 100%);
-      box-shadow: 0 0 26px rgba(230, 185, 105, 0.35), inset 0 0 14px rgba(0,0,0,0.6);
+      border: 1.5px solid rgba(226, 194, 137, 0.75);
+      background: radial-gradient(circle, #6F0C23 0%, #38020D 100%);
+      box-shadow: 0 0 24px rgba(230, 185, 105, 0.4), inset 0 0 12px rgba(0,0,0,0.6);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -182,18 +168,18 @@
       transition: transform 0.2s ease;
     }
     .heart-button-wrap:hover {
-      transform: scale(1.06);
+      transform: scale(1.08);
     }
     @keyframes heartGlow {
       0%, 100% {
-        box-shadow: 0 0 20px rgba(230, 185, 105, 0.3), inset 0 0 10px rgba(0,0,0,0.6);
+        box-shadow: 0 0 18px rgba(230, 185, 105, 0.35), inset 0 0 10px rgba(0,0,0,0.6);
       }
       50% {
-        box-shadow: 0 0 35px rgba(245, 212, 146, 0.65), inset 0 0 14px rgba(0,0,0,0.5);
+        box-shadow: 0 0 32px rgba(245, 212, 146, 0.7), inset 0 0 14px rgba(0,0,0,0.5);
       }
     }
 
-    /* SHINING LIGHT EFFECT ACROSS THE SEAL */
+    /* LIGHT SWEEP ON SEAL */
     .heart-button-wrap::after {
       content: "";
       position: absolute;
@@ -204,7 +190,7 @@
       background: linear-gradient(
         45deg,
         transparent 35%,
-        rgba(255, 255, 255, 0.38) 50%,
+        rgba(255, 255, 255, 0.4) 50%,
         transparent 65%
       );
       transform: rotate(25deg);
@@ -217,48 +203,48 @@
     }
 
     .heart-icon-gold {
-      width: clamp(26px, 6vw, 32px);
-      height: clamp(26px, 6vw, 32px);
+      width: 24px;
+      height: 24px;
       fill: #F4D396;
       filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
       margin-bottom: 2px;
     }
     .seal-text {
       font-family: 'Cinzel', serif;
-      font-size: clamp(0.95rem, 2.2vh, 1.15rem);
+      font-size: 0.96rem;
       font-weight: 800;
       color: #F8E2B2;
       letter-spacing: 2px;
     }
 
-    /* BOUNCING DOWNWARD ARROW */
-    .bounce-arrow {
-      margin-top: clamp(8px, 1.6vh, 12px);
-      animation: bounceSlow 1.4s infinite ease-in-out;
+    /* UPWARD POINTING ARROW BOUNCING TOWARD SEAL */
+    .bounce-arrow-up {
+      margin-top: 10px;
+      animation: bounceUp 1.4s infinite ease-in-out;
     }
-    @keyframes bounceSlow {
+    @keyframes bounceUp {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(6px); }
+      50% { transform: translateY(-7px); }
     }
-    .bounce-arrow svg {
+    .bounce-arrow-up svg {
       width: 20px;
       height: 20px;
       stroke: #E2C289;
     }
 
     .tap-guide-text {
-      font-size: clamp(0.9rem, 2.2vh, 1.05rem);
+      font-size: clamp(0.85rem, 1.8vh, 0.96rem);
       font-weight: 600;
       color: #FFFFFF;
       letter-spacing: 0.5px;
       margin-top: 4px;
     }
     .tap-footer-text {
-      font-size: clamp(0.64rem, 1.5vh, 0.72rem);
+      font-size: clamp(0.6rem, 1.3vh, 0.68rem);
       letter-spacing: 2.5px;
       text-transform: uppercase;
       color: #CBAA6F;
-      margin-top: 4px;
+      margin-top: 3px;
     }
 
     /* MAIN INVITATION CARD (MATCHING FLORAL SCREEN) */
@@ -607,7 +593,7 @@
   <!-- Audio Element configured with your exact file name -->
   <audio id="weddingAudio" src="Best Engagement invitation telugu.mp3" loop preload="auto"></audio>
 
-  <!-- ZERO-SCROLL ROYAL MAROON OVERLAY WITH EMBOSSED GLOWING HEART SEAL -->
+  <!-- ZERO-SCROLL ROYAL MAROON OVERLAY (CENTERED HEART & UPWARD ARROW) -->
   <div class="envelope-screen" id="envelopeScreen" onclick="openEnvelope()">
     
     <!-- Faint Gold Mandala Background -->
@@ -634,8 +620,8 @@
       <p class="intro-tagline">To celebrate a promise of forever</p>
     </div>
 
-    <!-- Bottom Love Heart Seal & Dynamic Guidance Arrow -->
-    <div class="bottom-seal-block">
+    <!-- Interactive Heart Seal & Upward Guiding Arrow -->
+    <div class="interactive-seal-block">
       <div class="heart-button-wrap">
         <svg class="heart-icon-gold" viewBox="0 0 24 24">
           <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
@@ -643,10 +629,11 @@
         <div class="seal-text">S &amp; H</div>
       </div>
 
-      <div class="bounce-arrow">
+      <!-- Arrow Pointing UP towards the Heart -->
+      <div class="bounce-arrow-up">
         <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="12" y1="5" x2="12" y2="19"></line>
-          <polyline points="19 12 12 19 5 12"></polyline>
+          <line x1="12" y1="19" x2="12" y2="5"></line>
+          <polyline points="5 12 12 5 19 12"></polyline>
         </svg>
       </div>
 
