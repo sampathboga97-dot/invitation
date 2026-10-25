@@ -17,6 +17,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Great+Vibes&family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Ramabhadra&family=Suranna&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <!-- HTML2Canvas for 1-Click Card Image Generation -->
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 
   <style>
     :root {
@@ -523,6 +525,19 @@
       font-family: inherit;
     }
     .action-btn:active { transform: scale(0.98); }
+
+    /* DOWNLOAD CARD BUTTON */
+    .btn-download {
+      background: #FAF5EB;
+      color: var(--maroon-heading);
+      border: 1.5px solid #DFC394;
+      box-shadow: 0 4px 12px rgba(163, 124, 50, 0.15);
+      font-weight: 700;
+    }
+    .btn-download:hover {
+      background: #F5EADA;
+    }
+
     .btn-share {
       background: linear-gradient(135deg, #8E6A26 0%, #D4A738 100%);
       color: #FFFFFF;
@@ -659,7 +674,7 @@
 
   <button class="audio-btn" id="audioToggle" onclick="toggleAudio()" title="Play / Pause Melodies">🎵</button>
 
-  <div class="invitation-container">
+  <div class="invitation-container" id="invitationCard">
     <div class="card-inner">
 
       <!-- Corner Garlands -->
@@ -703,7 +718,7 @@
       <div class="main-body">
 
         <!-- BILINGUAL LANGUAGE SWITCHER -->
-        <div class="lang-switcher-wrap">
+        <div class="lang-switcher-wrap" id="langSwitchArea">
           <div class="lang-switcher">
             <button class="lang-btn active" id="btnLangEn" onclick="switchLanguage('en')">English</button>
             <button class="lang-btn" id="btnLangTe" onclick="switchLanguage('te')">తెలుగు</button>
@@ -789,8 +804,18 @@
           </div>
         </div>
 
-        <!-- Action Buttons (Including Native Web Share API) -->
-        <div class="button-group">
+        <!-- Action Buttons (Download, Share, Maps, WhatsApp, Call) -->
+        <div class="button-group" id="cardActionsArea">
+          <!-- Download Card Button -->
+          <button class="action-btn btn-download" id="btnDownload" onclick="downloadInvitationCard()">
+            <svg style="width:18px;height:18px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            <span id="downloadBtnText">Download Invitation Card</span>
+          </button>
+
           <!-- Web Share API Button -->
           <button class="action-btn btn-share" id="btnShare" onclick="shareInvitation()">
             <svg style="width:18px;height:18px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
@@ -909,11 +934,11 @@
     updateCountdown();
 
     // ==========================================
-    // 1. BILINGUAL ENGLISH / TELUGU DICTIONARY
+    // BILINGUAL ENGLISH / TELUGU DICTIONARY
     // ==========================================
     const translations = {
       en: {
-        shloka: "|| श्री गणेशाय नमः ||",
+        shloka: "|| శ్రీ గణేశాయ నమః ||",
         subHead: "Please Join Us For An",
         mainTitle: "Engagement Ceremony",
         coupleNames: "Harika &amp; Sampath",
@@ -928,13 +953,16 @@
         venueContent: "G13/P, Sri Ram Nagar Colony, Beside Kidzee School, Suraram, Hyderabad, Telangana",
         blessingsSub: "With the Blessings of",
         blessingsTitle: "Our Parents and Elders",
+        downloadBtn: "Download Invitation Card",
+        downloadingMsg: "Generating Invitation Card...",
         shareBtn: "Share Invitation with Family",
         mapsBtn: "📍 Get Directions (Google Maps)",
         waBtn: "💐 Share your wishes with us on WhatsApp 🤍",
         callBtn: "📞 Call +91 76759 75990",
         footerSub: "With love and blessings from the families of",
         footerCouple: "Harika &amp; Sampath",
-        toastCopied: "Invitation link copied to clipboard!"
+        toastCopied: "Invitation link copied to clipboard!",
+        downloadSuccess: "Invitation card downloaded successfully!"
       },
       te: {
         shloka: "|| శ్రీ గణేశాయ నమః ||",
@@ -952,13 +980,16 @@
         venueContent: "G13/P, శ్రీ రామ్ నగర్ కాలనీ, కిడ్జీ స్కూల్ పక్కన, సూరారం, హైదరాబాద్, తెలంగాణ",
         blessingsSub: "తల్లిదండ్రులు మరియు పెద్దల",
         blessingsTitle: "దివ్య ఆశీస్సులతో",
+        downloadBtn: "ఆహ్వాన పత్రికను డౌన్‌లోడ్ చేసుకోండి",
+        downloadingMsg: "కార్డ్ డౌన్‌లోడ్ అవుతోంది...",
         shareBtn: "ఆహ్వాన పత్రికను షేర్ చేయండి",
         mapsBtn: "📍 వేదిక రూట్ మ్యాప్ (Google Maps)",
         waBtn: "💐 వాట్సాప్‌లో శుభాకాంక్షలు తెలపండి 🤍",
         callBtn: "📞 ఫోన్ చేయండి +91 76759 75990",
         footerSub: "ప్రేమాభిమానాలతో ఆహ్వానించువారు",
         footerCouple: "హారిక &amp; సంపత్ కుటుంబ సభ్యులు",
-        toastCopied: "ఆహ్వాన లింక్ కాపీ చేయబడింది!"
+        toastCopied: "ఆహ్వాన లింక్ కాపీ చేయబడింది!",
+        downloadSuccess: "ఆహ్వాన పత్రిక విజయవంతంగా డౌన్‌లోడ్ అయింది!"
       }
     };
 
@@ -972,7 +1003,6 @@
       document.getElementById('btnLangTe').classList.toggle('active', lang === 'te');
       document.body.classList.toggle('telugu-active', lang === 'te');
 
-      // Update text
       document.getElementById('sacredShlokaMain').innerHTML = t.shloka;
       document.getElementById('subHead').innerHTML = t.subHead;
       document.getElementById('mainTitle').innerHTML = t.mainTitle;
@@ -999,6 +1029,7 @@
       document.getElementById('blessingsSub').innerText = t.blessingsSub;
       document.getElementById('blessingsTitle').innerText = t.blessingsTitle;
 
+      document.getElementById('downloadBtnText').innerText = t.downloadBtn;
       document.getElementById('shareBtnText').innerText = t.shareBtn;
       document.getElementById('mapsBtnText').innerHTML = t.mapsBtn;
       document.getElementById('waBtnText').innerHTML = t.waBtn;
@@ -1009,7 +1040,54 @@
     }
 
     // ==========================================
-    // 2. NATIVE WEB SHARE API
+    // LANGUAGE-AWARE CARD DOWNLOAD (html2canvas)
+    // ==========================================
+    async function downloadInvitationCard() {
+      const cardElement = document.getElementById('invitationCard');
+      const langSwitchArea = document.getElementById('langSwitchArea');
+      const actionArea = document.getElementById('cardActionsArea');
+      const downloadTextSpan = document.getElementById('downloadBtnText');
+      const originalText = downloadTextSpan.innerText;
+
+      // Provide immediate feedback to the guest
+      downloadTextSpan.innerText = translations[currentLang].downloadingMsg;
+      showToast(translations[currentLang].downloadingMsg);
+
+      // Temporarily hide the on-screen buttons so the downloaded image looks like a pure keepsake card
+      langSwitchArea.style.display = 'none';
+      actionArea.style.display = 'none';
+
+      try {
+        const canvas = await html2canvas(cardElement, {
+          scale: 2.2, // 2x high resolution
+          useCORS: true,
+          backgroundColor: '#FFFFFF',
+          logging: false
+        });
+
+        // Generate download file name according to current active language
+        const langSuffix = currentLang.toUpperCase();
+        const fileName = `Harika_Sampath_Engagement_Invitation_${langSuffix}.png`;
+
+        const link = document.createElement('a');
+        link.download = fileName;
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+
+        showToast(translations[currentLang].downloadSuccess);
+      } catch (error) {
+        console.error('Error generating card image:', error);
+        alert('Could not download image directly. Please take a screenshot of your card.');
+      } finally {
+        // Restore controls on screen
+        langSwitchArea.style.display = 'flex';
+        actionArea.style.display = 'flex';
+        downloadTextSpan.innerText = originalText;
+      }
+    }
+
+    // ==========================================
+    // NATIVE WEB SHARE API
     // ==========================================
     async function shareInvitation() {
       const shareTitle = currentLang === 'te' 
@@ -1041,7 +1119,7 @@
 
     function fallbackCopyToClipboard(text) {
       if (navigator.clipboard && window.isSecureContext) {
-        navigator.clipboard.writeText(text).then(showToast);
+        navigator.clipboard.writeText(text).then(() => showToast(translations[currentLang].toastCopied));
       } else {
         const tempInput = document.createElement("input");
         tempInput.value = text;
@@ -1049,13 +1127,13 @@
         tempInput.select();
         document.execCommand("copy");
         document.body.removeChild(tempInput);
-        showToast();
+        showToast(translations[currentLang].toastCopied);
       }
     }
 
-    function showToast() {
+    function showToast(message) {
       const toast = document.getElementById('toastBox');
-      document.getElementById('toastMsg').innerText = translations[currentLang].toastCopied;
+      document.getElementById('toastMsg').innerText = message || translations[currentLang].toastCopied;
       toast.classList.add('show');
       setTimeout(() => {
         toast.classList.remove('show');
