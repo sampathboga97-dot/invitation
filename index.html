@@ -5,10 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Engagement Ceremony | Harika &amp; Sampath</title>
   <meta name="description" content="You are cordially invited to celebrate the Engagement Ceremony of Harika &amp; Sampath on Friday, October 30, 2026.">
+
+  <!-- Open Graph for WhatsApp & Social Media Preview Cards -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Engagement Ceremony | Harika & Sampath #SamRika">
+  <meta property="og:description" content="With joy in our hearts, we invite you to celebrate our engagement on Friday, 30 October 2026 at 11:00 AM.">
+  <meta property="og:image" content="couple.png">
+  <meta name="theme-color" content="#520718">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Great+Vibes&family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Great+Vibes&family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Ramabhadra&family=Suranna&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
   <style>
     :root {
       --navy-title: #142340;
@@ -29,7 +38,7 @@
       padding: 10px;
     }
 
-    /* FULL VIEWPORT ZERO-SCROLL OVERLAY */
+    /* ZERO-SCROLL ROYAL MAROON OVERLAY */
     .envelope-screen {
       position: fixed;
       inset: 0;
@@ -77,11 +86,7 @@
       to { transform: translate(-50%, -50%) rotate(360deg); }
     }
 
-    /* TOP SACRED BLOCK */
-    .top-sacred-block {
-      position: relative;
-      z-index: 2;
-    }
+    .top-sacred-block { position: relative; z-index: 2; }
     .sacred-om {
       font-size: clamp(1.6rem, 3.8vh, 2rem);
       line-height: 1;
@@ -102,11 +107,7 @@
       margin: 10px auto 0;
     }
 
-    /* CENTER NAMES & ANNOUNCEMENT */
-    .center-invite-block {
-      position: relative;
-      z-index: 2;
-    }
+    .center-invite-block { position: relative; z-index: 2; }
     .intro-title {
       font-family: 'Playfair Display', serif;
       font-size: clamp(1.3rem, 3vh, 1.7rem);
@@ -140,7 +141,6 @@
       color: #E6CEAE;
     }
 
-    /* CENTERED ELEVATED SEAL BLOCK */
     .interactive-seal-block {
       position: relative;
       z-index: 2;
@@ -148,8 +148,6 @@
       flex-direction: column;
       align-items: center;
     }
-
-    /* COMPACT HEART SEAL (96px) */
     .heart-button-wrap {
       position: relative;
       width: 96px;
@@ -167,19 +165,11 @@
       animation: heartGlow 2.4s infinite ease-in-out;
       transition: transform 0.2s ease;
     }
-    .heart-button-wrap:hover {
-      transform: scale(1.08);
-    }
+    .heart-button-wrap:hover { transform: scale(1.08); }
     @keyframes heartGlow {
-      0%, 100% {
-        box-shadow: 0 0 18px rgba(230, 185, 105, 0.35), inset 0 0 10px rgba(0,0,0,0.6);
-      }
-      50% {
-        box-shadow: 0 0 32px rgba(245, 212, 146, 0.7), inset 0 0 14px rgba(0,0,0,0.5);
-      }
+      0%, 100% { box-shadow: 0 0 18px rgba(230, 185, 105, 0.35), inset 0 0 10px rgba(0,0,0,0.6); }
+      50% { box-shadow: 0 0 32px rgba(245, 212, 146, 0.7), inset 0 0 14px rgba(0,0,0,0.5); }
     }
-
-    /* LIGHT SWEEP ON SEAL */
     .heart-button-wrap::after {
       content: "";
       position: absolute;
@@ -187,12 +177,7 @@
       left: -60%;
       width: 220%;
       height: 220%;
-      background: linear-gradient(
-        45deg,
-        transparent 35%,
-        rgba(255, 255, 255, 0.4) 50%,
-        transparent 65%
-      );
+      background: linear-gradient(45deg, transparent 35%, rgba(255, 255, 255, 0.4) 50%, transparent 65%);
       transform: rotate(25deg);
       animation: shineSweep 3.2s infinite ease-in-out;
       pointer-events: none;
@@ -201,7 +186,6 @@
       0% { transform: translateX(-120%) rotate(25deg); }
       35%, 100% { transform: translateX(120%) rotate(25deg); }
     }
-
     .heart-icon-gold {
       width: 24px;
       height: 24px;
@@ -216,8 +200,6 @@
       color: #F8E2B2;
       letter-spacing: 2px;
     }
-
-    /* UPWARD POINTING ARROW BOUNCING TOWARD SEAL */
     .bounce-arrow-up {
       margin-top: 10px;
       animation: bounceUp 1.4s infinite ease-in-out;
@@ -226,12 +208,7 @@
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-7px); }
     }
-    .bounce-arrow-up svg {
-      width: 20px;
-      height: 20px;
-      stroke: #E2C289;
-    }
-
+    .bounce-arrow-up svg { width: 20px; height: 20px; stroke: #E2C289; }
     .tap-guide-text {
       font-size: clamp(0.85rem, 1.8vh, 0.96rem);
       font-weight: 600;
@@ -247,7 +224,42 @@
       margin-top: 3px;
     }
 
-    /* MAIN INVITATION CARD (MATCHING FLORAL SCREEN) */
+    /* LANGUAGE TOGGLE SWITCH BAR */
+    .lang-switcher-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 14px;
+      position: relative;
+      z-index: 10;
+    }
+    .lang-switcher {
+      display: inline-flex;
+      background: #F1E5D1;
+      border: 1px solid #DFC394;
+      border-radius: 20px;
+      padding: 2px;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.08);
+    }
+    .lang-btn {
+      border: none;
+      background: transparent;
+      padding: 5px 14px;
+      border-radius: 16px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: #7A6953;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      font-family: inherit;
+    }
+    .lang-btn.active {
+      background: #98223B;
+      color: #FFFFFF;
+      box-shadow: 0 2px 6px rgba(152, 34, 59, 0.3);
+    }
+
+    /* MAIN INVITATION CARD */
     .invitation-container {
       width: 100%;
       max-width: 490px;
@@ -261,7 +273,7 @@
     .card-inner {
       position: relative;
       background: #FFFDF9;
-      padding: 38px 24px 28px;
+      padding: 34px 22px 28px;
       overflow: hidden;
     }
     .card-inner::after {
@@ -277,7 +289,6 @@
       z-index: 1;
     }
 
-    /* CORNER FLOWER BUNCHES */
     .corner-garland {
       position: absolute;
       width: 120px;
@@ -285,17 +296,9 @@
       z-index: 3;
       pointer-events: none;
     }
-    .corner-top-left {
-      top: 4px;
-      left: 4px;
-    }
-    .corner-top-right {
-      top: 4px;
-      right: 4px;
-      transform: scaleX(-1);
-    }
+    .corner-top-left { top: 4px; left: 4px; }
+    .corner-top-right { top: 4px; right: 4px; transform: scaleX(-1); }
 
-    /* SIDE PASTEL VINES */
     .side-vine {
       position: absolute;
       top: 80px;
@@ -320,10 +323,9 @@
       position: relative;
       z-index: 4;
       text-align: center;
-      padding: 0 10px;
+      padding: 0 6px;
     }
 
-    /* GANESHA IMAGE */
     .ganesha-frame {
       width: 90px;
       height: 68px;
@@ -334,11 +336,7 @@
       box-shadow: 0 4px 10px rgba(163, 124, 50, 0.15);
       background: #FFFFFF;
     }
-    .ganesha-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+    .ganesha-frame img { width: 100%; height: 100%; object-fit: cover; }
 
     .shloka-text {
       font-size: 0.95rem;
@@ -354,25 +352,34 @@
       color: #6C5D4B;
       font-weight: 600;
       margin-bottom: 3px;
+      transition: all 0.3s ease;
     }
     .main-title {
-      font-family: 'Cinzel', serif;
+      font-family: 'Cinzel', 'Suranna', serif;
       font-size: 1.48rem;
       color: var(--navy-title);
-      letter-spacing: 3px;
+      letter-spacing: 2.5px;
       font-weight: 800;
       text-transform: uppercase;
       margin-bottom: 4px;
+      transition: all 0.3s ease;
     }
 
-    /* COUPLE NAMES & HASHTAG */
     .couple-names {
-      font-family: 'Great Vibes', cursive;
-      font-size: 3.5rem;
+      font-family: 'Great Vibes', 'Ramabhadra', cursive;
+      font-size: 3.4rem;
       color: var(--maroon-heading);
       line-height: 1.15;
       margin: 0;
+      transition: font-size 0.3s ease;
     }
+    body.telugu-active .couple-names {
+      font-family: 'Ramabhadra', sans-serif;
+      font-size: 2.1rem;
+      letter-spacing: 1px;
+      margin: 6px 0;
+    }
+
     .hashtag-line {
       font-size: 1.05rem;
       color: var(--gold-dark);
@@ -380,13 +387,8 @@
       letter-spacing: 1.5px;
       margin: 2px 0 12px;
     }
-    .hashtag-line span {
-      display: inline-block;
-      margin: 0 4px;
-      color: #D4A738;
-    }
+    .hashtag-line span { display: inline-block; margin: 0 4px; color: #D4A738; }
 
-    /* COUPLE PHOTO CIRCLE */
     .couple-photo-wrapper {
       position: relative;
       width: 175px;
@@ -402,23 +404,19 @@
       box-shadow: 0 8px 22px rgba(0,0,0,0.14);
       background: #FFFFFF;
     }
-    .couple-photo-circle img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+    .couple-photo-circle img { width: 100%; height: 100%; object-fit: cover; }
 
     .invite-quote {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Playfair Display', 'Suranna', serif;
       font-style: italic;
-      font-size: 0.96rem;
+      font-size: 0.95rem;
       color: #4C4339;
       line-height: 1.55;
       margin-bottom: 18px;
       padding: 0 6px;
+      transition: all 0.3s ease;
     }
 
-    /* COUNTDOWN BOX */
     .countdown-box {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -444,7 +442,6 @@
       margin-top: 6px;
     }
 
-    /* DETAILS GRID */
     .details-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -470,13 +467,12 @@
       margin-bottom: 6px;
     }
     .detail-body {
-      font-size: 0.88rem;
+      font-size: 0.86rem;
       color: var(--navy-title);
       font-weight: 600;
       line-height: 1.45;
     }
 
-    /* BLESSINGS BANNER */
     .blessings-card {
       background: #FFFDF8;
       border: 1px solid #E5CCA2;
@@ -488,12 +484,8 @@
       justify-content: center;
       gap: 12px;
     }
-    .namaste-icon {
-      font-size: 1.6rem;
-    }
-    .blessings-text-wrap {
-      text-align: center;
-    }
+    .namaste-icon { font-size: 1.6rem; }
+    .blessings-text-wrap { text-align: center; }
     .blessings-sub {
       font-size: 0.68rem;
       letter-spacing: 2px;
@@ -502,7 +494,7 @@
       font-weight: 700;
     }
     .blessings-title {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Playfair Display', 'Suranna', serif;
       font-style: italic;
       font-size: 1.05rem;
       color: var(--text-dark);
@@ -525,12 +517,16 @@
       font-size: 0.92rem;
       font-weight: 600;
       text-decoration: none;
-      transition: transform 0.15s ease;
+      transition: transform 0.15s ease, background-color 0.2s ease;
       cursor: pointer;
       border: none;
+      font-family: inherit;
     }
-    .action-btn:active {
-      transform: scale(0.98);
+    .action-btn:active { transform: scale(0.98); }
+    .btn-share {
+      background: linear-gradient(135deg, #8E6A26 0%, #D4A738 100%);
+      color: #FFFFFF;
+      box-shadow: 0 4px 12px rgba(142, 106, 38, 0.35);
     }
     .btn-maps {
       background: #98223B;
@@ -561,14 +557,13 @@
       font-size: 0.88rem;
     }
     .footer-couple-name {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Playfair Display', 'Ramabhadra', serif;
       font-size: 1.15rem;
       font-weight: 700;
       color: var(--maroon-heading);
       margin-top: 2px;
     }
 
-    /* AUDIO TOGGLE BUTTON */
     .audio-btn {
       position: fixed;
       bottom: 20px;
@@ -586,17 +581,41 @@
       font-size: 19px;
       z-index: 100;
     }
+
+    /* TOAST ALERT NOTIFICATION */
+    .toast-box {
+      position: fixed;
+      bottom: 74px;
+      left: 50%;
+      transform: translateX(-50%) translateY(30px);
+      background: #142340;
+      color: #FFFFFF;
+      padding: 10px 22px;
+      border-radius: 25px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s ease;
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .toast-box.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
   </style>
 </head>
 <body>
 
-  <!-- Audio Element configured with your exact file name -->
+  <!-- Audio Element -->
   <audio id="weddingAudio" src="Best Engagement invitation telugu.mp3" loop preload="auto"></audio>
 
-  <!-- ZERO-SCROLL ROYAL MAROON OVERLAY (CENTERED HEART & UPWARD ARROW) -->
+  <!-- ZERO-SCROLL ROYAL MAROON OVERLAY -->
   <div class="envelope-screen" id="envelopeScreen" onclick="openEnvelope()">
-    
-    <!-- Faint Gold Mandala Background -->
     <svg class="mandala-watermark" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="100" cy="100" r="95" stroke="#F1D49B" stroke-width="1.5" stroke-dasharray="4 4"/>
       <circle cx="100" cy="100" r="75" stroke="#F1D49B" stroke-width="1.2"/>
@@ -605,22 +624,19 @@
       <polygon points="100,20 120,60 160,60 130,90 140,130 100,110 60,130 70,90 40,60 80,60" stroke="#F1D49B" stroke-width="1"/>
     </svg>
 
-    <!-- Top Sacred Om & Prayer -->
     <div class="top-sacred-block">
       <div class="sacred-om">ॐ</div>
-      <div class="sacred-shloka">|| श्री गणेशाय नमः ||</div>
+      <div class="sacred-shloka">|| శ్రీ గణేశాయ నమః ||</div>
       <div class="sacred-divider"></div>
     </div>
 
-    <!-- Center Names & Announcement -->
     <div class="center-invite-block">
-      <h2 class="intro-title">A Beautiful Beginning</h2>
-      <div class="intro-sub">YOU ARE CORDIALLY INVITED TO</div>
-      <h1 class="intro-names">Harika &amp; Sampath</h1>
-      <p class="intro-tagline">To celebrate a promise of forever</p>
+      <h2 class="intro-title" id="overlayIntroTitle">A Beautiful Beginning</h2>
+      <div class="intro-sub" id="overlayIntroSub">YOU ARE CORDIALLY INVITED TO</div>
+      <h1 class="intro-names" id="overlayIntroNames">Harika &amp; Sampath</h1>
+      <p class="intro-tagline" id="overlayIntroTagline">To celebrate a promise of forever</p>
     </div>
 
-    <!-- Interactive Heart Seal & Upward Guiding Arrow -->
     <div class="interactive-seal-block">
       <div class="heart-button-wrap">
         <svg class="heart-icon-gold" viewBox="0 0 24 24">
@@ -629,7 +645,6 @@
         <div class="seal-text">S &amp; H</div>
       </div>
 
-      <!-- Arrow Pointing UP towards the Heart -->
       <div class="bounce-arrow-up">
         <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <line x1="12" y1="19" x2="12" y2="5"></line>
@@ -637,18 +652,17 @@
         </svg>
       </div>
 
-      <div class="tap-guide-text">Tap the heart to open</div>
-      <div class="tap-footer-text">AN INVITATION FILLED WITH LOVE</div>
+      <div class="tap-guide-text" id="overlayTapGuide">Tap the heart to open</div>
+      <div class="tap-footer-text" id="overlayTapFooter">AN INVITATION FILLED WITH LOVE</div>
     </div>
-
   </div>
 
-  <button class="audio-btn" id="audioToggle" onclick="toggleAudio()" title="Play Festive Melodies">🎵</button>
+  <button class="audio-btn" id="audioToggle" onclick="toggleAudio()" title="Play / Pause Melodies">🎵</button>
 
   <div class="invitation-container">
     <div class="card-inner">
-      
-      <!-- Top-Left Corner Flower Bunch -->
+
+      <!-- Corner Garlands -->
       <svg class="corner-garland corner-top-left" viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg">
         <ellipse cx="28" cy="18" rx="8" ry="4" fill="#92B789" transform="rotate(-30 28 18)" />
         <ellipse cx="58" cy="14" rx="9" ry="4" fill="#A5C69C" transform="rotate(-15 58 14)" />
@@ -665,8 +679,6 @@
         <circle cx="18" cy="46" r="8" fill="#FBC4CC" />
         <circle cx="18" cy="46" r="4.5" fill="#F39BA9" />
       </svg>
-
-      <!-- Top-Right Corner Flower Bunch -->
       <svg class="corner-garland corner-top-right" viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg">
         <ellipse cx="28" cy="18" rx="8" ry="4" fill="#92B789" transform="rotate(-30 28 18)" />
         <ellipse cx="58" cy="14" rx="9" ry="4" fill="#A5C69C" transform="rotate(-15 58 14)" />
@@ -690,17 +702,25 @@
 
       <div class="main-body">
 
+        <!-- BILINGUAL LANGUAGE SWITCHER -->
+        <div class="lang-switcher-wrap">
+          <div class="lang-switcher">
+            <button class="lang-btn active" id="btnLangEn" onclick="switchLanguage('en')">English</button>
+            <button class="lang-btn" id="btnLangTe" onclick="switchLanguage('te')">తెలుగు</button>
+          </div>
+        </div>
+
         <!-- Lord Ganesha Header Photo -->
         <div class="ganesha-frame">
           <img id="ganeshaImg" src="ganesha.jpg" alt="Lord Ganesha" onerror="handleGaneshaFallback(this)">
         </div>
-        <div class="shloka-text">|| श्री गणेशाय नमः ||</div>
+        <div class="shloka-text" id="sacredShlokaMain">|| శ్రీ గణేశాయ నమః ||</div>
 
-        <div class="sub-head">Please Join Us For An</div>
-        <h1 class="main-title">Engagement Ceremony</h1>
+        <div class="sub-head" id="subHead">Please Join Us For An</div>
+        <h1 class="main-title" id="mainTitle">Engagement Ceremony</h1>
 
         <!-- Couple Names & Hashtag -->
-        <div class="couple-names">Harika &amp; Sampath</div>
+        <div class="couple-names" id="coupleNames">Harika &amp; Sampath</div>
         <div class="hashtag-line">#SamRika <span>💛</span></div>
 
         <!-- Couple Photo in Circular Frame -->
@@ -710,7 +730,7 @@
           </div>
         </div>
 
-        <p class="invite-quote">
+        <p class="invite-quote" id="inviteQuote">
           With joy in our hearts, we invite you to celebrate our engagement as we begin our new journey together.
         </p>
 
@@ -718,74 +738,88 @@
         <div class="countdown-box">
           <div>
             <div class="count-number" id="days">--</div>
-            <div class="count-label">Days</div>
+            <div class="count-label" id="labelDays">Days</div>
           </div>
           <div>
             <div class="count-number" id="hours">--</div>
-            <div class="count-label">Hours</div>
+            <div class="count-label" id="labelHours">Hours</div>
           </div>
           <div>
             <div class="count-number" id="minutes">--</div>
-            <div class="count-label">Mins</div>
+            <div class="count-label" id="labelMins">Mins</div>
           </div>
           <div>
             <div class="count-number" id="seconds">--</div>
-            <div class="count-label">Secs</div>
+            <div class="count-label" id="labelSecs">Secs</div>
           </div>
         </div>
 
         <!-- 2-Column Date & Venue Details -->
         <div class="details-grid">
           <div class="detail-card">
-            <div class="detail-header">
-  <svg style="width:16px;height:16px;vertical-align:-2px;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="3" y="4" width="18" height="18" rx="3" stroke="#8E6A26" stroke-width="2"/>
-    <path d="M3 9H21" stroke="#8E6A26" stroke-width="2"/>
-    <path d="M8 2V5M16 2V5" stroke="#8E6A26" stroke-width="2" stroke-linecap="round"/>
-    <text x="12" y="17" fill="#8E6A26" font-size="7.5" font-weight="700" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif">30</text>
-  </svg> DATE &amp; TIME
-</div>
-            <div class="detail-body">
+            <div class="detail-header" id="dateHeader">
+              <svg style="width:16px;height:16px;vertical-align:-2px;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="3" y="4" width="18" height="18" rx="3" stroke="#8E6A26" stroke-width="2"/>
+                <path d="M3 9H21" stroke="#8E6A26" stroke-width="2"/>
+                <path d="M8 2V5M16 2V5" stroke="#8E6A26" stroke-width="2" stroke-linecap="round"/>
+                <text x="12" y="17" fill="#8E6A26" font-size="7.5" font-weight="700" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif">30</text>
+              </svg> DATE &amp; TIME
+            </div>
+            <div class="detail-body" id="dateBody">
               Friday, 30 October 2026<br>
               at 11:00 AM
             </div>
           </div>
           <div class="detail-card">
-            <div class="detail-header">
+            <div class="detail-header" id="venueHeader">
               <span>📍</span> VENUE
             </div>
-            <div class="detail-body">
+            <div class="detail-body" id="venueBody">
               G13/P, Sri Ram Nagar Colony, Beside Kidzee School, Suraram, Hyderabad, Telangana
             </div>
           </div>
         </div>
 
-        <!-- With the Blessings Banner -->
+        <!-- Blessings Banner -->
         <div class="blessings-card">
           <div class="namaste-icon">🙏</div>
           <div class="blessings-text-wrap">
-            <div class="blessings-sub">With the Blessings of</div>
-            <div class="blessings-title">Our Parents and Elders</div>
+            <div class="blessings-sub" id="blessingsSub">With the Blessings of</div>
+            <div class="blessings-title" id="blessingsTitle">Our Parents and Elders</div>
           </div>
         </div>
 
-        <!-- Action Buttons -->
+        <!-- Action Buttons (Including Native Web Share API) -->
         <div class="button-group">
-          <a class="action-btn btn-maps" href="https://maps.google.com/?q=17.5435233,78.426" target="_blank">
-            📍 Get Directions (Google Maps)
+          <!-- Web Share API Button -->
+          <button class="action-btn btn-share" id="btnShare" onclick="shareInvitation()">
+            <svg style="width:18px;height:18px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="18" cy="5" r="3"></circle>
+              <circle cx="6" cy="12" r="3"></circle>
+              <circle cx="18" cy="19" r="3"></circle>
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+            </svg>
+            <span id="shareBtnText">Share Invitation with Family</span>
+          </button>
+
+          <a class="action-btn btn-maps" id="btnMaps" href="https://maps.google.com/?q=17.5435233,78.426" target="_blank">
+            <span id="mapsBtnText">📍 Get Directions (Google Maps)</span>
           </a>
-         <a class="action-btn btn-whatsapp" href="https://wa.me/917675975990?text=Congratulations%20Harika%20%26%20Sampath!%20%F0%9F%92%90" target="_blank">
-        💐 Share your wishes with us on WhatsApp 🤍
-         </a>
+
+          <a class="action-btn btn-whatsapp" id="btnWhatsApp" href="https://wa.me/917675975990?text=Congratulations%20Harika%20%26%20Sampath!%20%F0%9F%92%90" target="_blank">
+            <span id="waBtnText">💐 Share your wishes with us on WhatsApp 🤍</span>
+          </a>
+
           <a class="action-btn btn-call" href="tel:+917675975990">
-            📞 Call +91 76759 75990
+            <span id="callBtnText">📞 Call +91 76759 75990</span>
           </a>
         </div>
 
         <!-- Footer -->
         <div class="footer-host">
-          <em>With love and blessings from the families of</em>
-          <div class="footer-couple-name">Harika &amp; Sampath</div>
+          <em id="footerSub">With love and blessings from the families of</em>
+          <div class="footer-couple-name" id="footerCouple">Harika &amp; Sampath</div>
           <div style="font-size:0.9rem; margin-top:3px; color:#98223B;">❤️</div>
         </div>
 
@@ -793,8 +827,13 @@
     </div>
   </div>
 
+  <!-- Toast Notification element -->
+  <div class="toast-box" id="toastBox">
+    <span>✨</span> <span id="toastMsg">Link copied to clipboard!</span>
+  </div>
+
   <script>
-    // Automatic fallback for image extensions
+    // Image fallbacks
     function handleGaneshaFallback(img) {
       if (img.src.indexOf('ganesha.jpg.jfif') === -1) {
         img.src = 'ganesha.jpg.jfif';
@@ -806,10 +845,10 @@
       }
     }
 
+    // Audio controls
     const audio = document.getElementById('weddingAudio');
     let isPlaying = false;
 
-    // Envelope Opening Animation + Play Audio
     function openEnvelope() {
       const screen = document.getElementById('envelopeScreen');
       screen.classList.add('opened');
@@ -826,12 +865,11 @@
           isPlaying = true;
           document.getElementById('audioToggle').innerText = '🔊';
         }).catch(err => {
-          console.log("Autoplay waiting for direct tap:", err);
+          console.log("Audio autoplay waiting for user gesture:", err);
         });
       }
     }
 
-    // Toggle Play / Mute Button
     function toggleAudio() {
       const btn = document.getElementById('audioToggle');
       if (!audio) return;
@@ -846,7 +884,7 @@
       }
     }
 
-    // Live Countdown Timer to Oct 30, 2026, 11:00 AM IST
+    // Live Countdown
     const eventTime = new Date('2026-10-30T11:00:00+05:30').getTime();
     function updateCountdown() {
       const now = new Date().getTime();
@@ -861,7 +899,7 @@
       const days = Math.floor(diff / (1000 * 60 * 60 * 24));
       const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const mins = Math.floor((diff % (1000 * 60)) / (1000 * 60));
-      const secs = Math.floor((diff % (1000 * 60)) / 1000);
+      const secs = Math.floor((diff % 1000) / 1000);
       document.getElementById('days').innerText = String(days).padStart(2, '0');
       document.getElementById('hours').innerText = String(hours).padStart(2, '0');
       document.getElementById('minutes').innerText = String(mins).padStart(2, '0');
@@ -869,6 +907,160 @@
     }
     setInterval(updateCountdown, 1000);
     updateCountdown();
+
+    // ==========================================
+    // 1. BILINGUAL ENGLISH / TELUGU DICTIONARY
+    // ==========================================
+    const translations = {
+      en: {
+        shloka: "|| श्री गणेशाय नमः ||",
+        subHead: "Please Join Us For An",
+        mainTitle: "Engagement Ceremony",
+        coupleNames: "Harika &amp; Sampath",
+        inviteQuote: "With joy in our hearts, we invite you to celebrate our engagement as we begin our new journey together.",
+        days: "Days",
+        hours: "Hours",
+        mins: "Mins",
+        secs: "Secs",
+        dateTitle: "DATE &amp; TIME",
+        dateContent: "Friday, 30 October 2026<br>at 11:00 AM",
+        venueTitle: "VENUE",
+        venueContent: "G13/P, Sri Ram Nagar Colony, Beside Kidzee School, Suraram, Hyderabad, Telangana",
+        blessingsSub: "With the Blessings of",
+        blessingsTitle: "Our Parents and Elders",
+        shareBtn: "Share Invitation with Family",
+        mapsBtn: "📍 Get Directions (Google Maps)",
+        waBtn: "💐 Share your wishes with us on WhatsApp 🤍",
+        callBtn: "📞 Call +91 76759 75990",
+        footerSub: "With love and blessings from the families of",
+        footerCouple: "Harika &amp; Sampath",
+        toastCopied: "Invitation link copied to clipboard!"
+      },
+      te: {
+        shloka: "|| శ్రీ గణేశాయ నమః ||",
+        subHead: "నిశ్చితార్థ మహోత్సవ ఆహ్వాన శుభపత్రిక",
+        mainTitle: "నిశ్చితార్థ మహోత్సవం",
+        coupleNames: "హారిక &amp; సంపత్",
+        inviteQuote: "మా నూతన జీవిత ప్రయాణాన్ని ప్రారంభిస్తున్న శుభవేళ, బంధుమిత్రులు మరియు శ్రేయోభిలాషులు విచ్చేసి మమ్మల్ని ఆశీర్వదించగలరని మనస్ఫూర్తిగా కోరుచున్నాము.",
+        days: "రోజులు",
+        hours: "గంటలు",
+        mins: "నిమిషాలు",
+        secs: "సెకన్లు",
+        dateTitle: "ముహూర్తం &amp; సమయం",
+        dateContent: "శుక్రవారం, 30 అక్టోబర్ 2026<br>ఉదయం 11:00 గంటలకు",
+        venueTitle: "వేదిక",
+        venueContent: "G13/P, శ్రీ రామ్ నగర్ కాలనీ, కిడ్జీ స్కూల్ పక్కన, సూరారం, హైదరాబాద్, తెలంగాణ",
+        blessingsSub: "తల్లిదండ్రులు మరియు పెద్దల",
+        blessingsTitle: "దివ్య ఆశీస్సులతో",
+        shareBtn: "ఆహ్వాన పత్రికను షేర్ చేయండి",
+        mapsBtn: "📍 వేదిక రూట్ మ్యాప్ (Google Maps)",
+        waBtn: "💐 వాట్సాప్‌లో శుభాకాంక్షలు తెలపండి 🤍",
+        callBtn: "📞 ఫోన్ చేయండి +91 76759 75990",
+        footerSub: "ప్రేమాభిమానాలతో ఆహ్వానించువారు",
+        footerCouple: "హారిక &amp; సంపత్ కుటుంబ సభ్యులు",
+        toastCopied: "ఆహ్వాన లింక్ కాపీ చేయబడింది!"
+      }
+    };
+
+    let currentLang = 'en';
+
+    function switchLanguage(lang) {
+      currentLang = lang;
+      const t = translations[lang];
+
+      document.getElementById('btnLangEn').classList.toggle('active', lang === 'en');
+      document.getElementById('btnLangTe').classList.toggle('active', lang === 'te');
+      document.body.classList.toggle('telugu-active', lang === 'te');
+
+      // Update text
+      document.getElementById('sacredShlokaMain').innerHTML = t.shloka;
+      document.getElementById('subHead').innerHTML = t.subHead;
+      document.getElementById('mainTitle').innerHTML = t.mainTitle;
+      document.getElementById('coupleNames').innerHTML = t.coupleNames;
+      document.getElementById('inviteQuote').innerHTML = t.inviteQuote;
+      
+      document.getElementById('labelDays').innerText = t.days;
+      document.getElementById('labelHours').innerText = t.hours;
+      document.getElementById('labelMins').innerText = t.mins;
+      document.getElementById('labelSecs').innerText = t.secs;
+
+      document.getElementById('dateHeader').innerHTML = `
+        <svg style="width:16px;height:16px;vertical-align:-2px;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="4" width="18" height="18" rx="3" stroke="#8E6A26" stroke-width="2"/>
+          <path d="M3 9H21" stroke="#8E6A26" stroke-width="2"/>
+          <path d="M8 2V5M16 2V5" stroke="#8E6A26" stroke-width="2" stroke-linecap="round"/>
+          <text x="12" y="17" fill="#8E6A26" font-size="7.5" font-weight="700" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif">30</text>
+        </svg> ${t.dateTitle}
+      `;
+      document.getElementById('dateBody').innerHTML = t.dateContent;
+      document.getElementById('venueHeader').innerHTML = `<span>📍</span> ${t.venueTitle}`;
+      document.getElementById('venueBody').innerHTML = t.venueContent;
+
+      document.getElementById('blessingsSub').innerText = t.blessingsSub;
+      document.getElementById('blessingsTitle').innerText = t.blessingsTitle;
+
+      document.getElementById('shareBtnText').innerText = t.shareBtn;
+      document.getElementById('mapsBtnText').innerHTML = t.mapsBtn;
+      document.getElementById('waBtnText').innerHTML = t.waBtn;
+      document.getElementById('callBtnText').innerHTML = t.callBtn;
+
+      document.getElementById('footerSub').innerText = t.footerSub;
+      document.getElementById('footerCouple').innerHTML = t.footerCouple;
+    }
+
+    // ==========================================
+    // 2. NATIVE WEB SHARE API
+    // ==========================================
+    async function shareInvitation() {
+      const shareTitle = currentLang === 'te' 
+        ? 'హారిక & సంపత్ నిశ్చితార్థ మహోత్సవ ఆహ్వానం #SamRika' 
+        : 'Engagement Ceremony | Harika & Sampath #SamRika';
+      
+      const shareText = currentLang === 'te'
+        ? 'హారిక & సంపత్ నిశ్చితార్థ మహోత్సవానికి మిమ్మల్ని సాదరంగా ఆహ్వానిస్తున్నాము.\n📅 శుక్రవారం, 30 అక్టోబర్ 2026, ఉదయం 11:00 గంటలకు.\nవేదిక: సూరారం, హైదరాబాద్.'
+        : 'We warmly invite you to the Engagement Ceremony of Harika & Sampath!\n📅 Friday, 30 October 2026 at 11:00 AM\n📍 Suraram, Hyderabad.';
+
+      const shareUrl = window.location.href;
+
+      if (navigator.share) {
+        try {
+          await navigator.share({
+            title: shareTitle,
+            text: shareText,
+            url: shareUrl
+          });
+        } catch (err) {
+          if (err.name !== 'AbortError') {
+            fallbackCopyToClipboard(shareUrl);
+          }
+        }
+      } else {
+        fallbackCopyToClipboard(shareUrl);
+      }
+    }
+
+    function fallbackCopyToClipboard(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(showToast);
+      } else {
+        const tempInput = document.createElement("input");
+        tempInput.value = text;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempInput);
+        showToast();
+      }
+    }
+
+    function showToast() {
+      const toast = document.getElementById('toastBox');
+      document.getElementById('toastMsg').innerText = translations[currentLang].toastCopied;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000);
+    }
   </script>
 </body>
 </html>
