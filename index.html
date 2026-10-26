@@ -385,9 +385,28 @@
       color: var(--gold-dark);
       font-weight: 700;
       letter-spacing: 1.5px;
-      margin: 2px 0 12px;
+      margin: 2px 0 10px;
     }
     .hashtag-line span { display: inline-block; margin: 0 4px; color: #D4A738; }
+
+    /* ANIMATED HEARTS VIDEO FRAME */
+    .video-card-wrap {
+      width: 100%;
+      max-width: 320px;
+      margin: 10px auto 14px;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 2px solid #E5CCA2;
+      box-shadow: 0 6px 20px rgba(152, 34, 59, 0.25);
+      background: #000000;
+      line-height: 0;
+    }
+    .video-card-wrap video {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
 
     .couple-photo-wrapper {
       position: relative;
@@ -524,7 +543,6 @@
     }
     .action-btn:active { transform: scale(0.98); }
 
-    /* DOWNLOAD CARD BUTTON */
     .btn-download {
       background: #FAF5EB;
       color: var(--maroon-heading);
@@ -736,6 +754,11 @@
         <div class="couple-names" id="coupleNames">Harika &amp; Sampath</div>
         <div class="hashtag-line">#SamRika <span>💛</span></div>
 
+        <!-- COUPLE ANIMATED HEARTS VIDEO -->
+        <div class="video-card-wrap">
+          <video src="gemini_generated_video_75d334b5.mp4" autoplay loop muted playsinline preload="auto"></video>
+        </div>
+
         <!-- Couple Photo in Circular Frame -->
         <div class="couple-photo-wrapper">
           <div class="couple-photo-circle">
@@ -804,7 +827,7 @@
 
         <!-- Action Buttons -->
         <div class="button-group" id="cardActionsArea">
-          <!-- Download Invitee.png Button -->
+          <!-- Download Invitation Card Button -->
           <a class="action-btn btn-download" id="btnDownload" href="SamRika_Invite_Card.png" download="SamRika_Invite_Card.png" onclick="notifyDownload()">
             <svg style="width:18px;height:18px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -909,7 +932,7 @@
 
     // ==========================================
     // BULLETPROOF LIVE COUNTDOWN TIMER
-    // Target: Friday, 30 October 2026, 11:00 AM IST
+    // Target: Friday, 30 October 2026, 12:30 PM IST
     // ==========================================
     const targetDate = new Date(2026, 9, 30, 12, 30, 0).getTime(); // 12:30 PM (Month 9 = October)
 
@@ -967,14 +990,14 @@
         blessingsSub: "With the Blessings of",
         blessingsTitle: "Our Parents and Elders",
         downloadBtn: "Download Invitation Card",
-        shareBtn: "Share Invitation with Family",
+        shareBtn: "Share Invitation with Family and Friends",
         mapsBtn: "📍 Get Directions (Google Maps)",
         waBtn: "💐 Share your wishes with us on WhatsApp 🤍",
         callBtn: "📞 Call +91 76759 75990",
         footerSub: "With love and blessings from the families of",
         footerCouple: "Harika &amp; Sampath",
         toastCopied: "Invitation link copied to clipboard!",
-        downloadSuccess: "Downloading Invitee.png..."
+        downloadSuccess: "Downloading SamRika Invite Card..."
       },
       te: {
         shloka: "|| శ్రీ గణేశాయ నమః ||",
@@ -987,7 +1010,7 @@
         mins: "నిమిషాలు",
         secs: "సెకన్లు",
         dateTitle: "ముహూర్తం &amp; సమయం",
-        dateContent: "శుక్రవారం, 30 అక్టోబర్ 2026<br>ఉదయం 11:00 గంటలకు",
+        dateContent: "శుక్రవారం, 30 అక్టోబర్ 2026<br>మధ్యాహ్నం 12:30 గంటలకు",
         venueTitle: "వేదిక",
         venueContent: "G13/P, శ్రీ రామ్ నగర్ కాలనీ, కిడ్జీ స్కూల్ పక్కన, సూరారం, హైదరాబాద్, తెలంగాణ",
         blessingsSub: "తల్లిదండ్రులు మరియు పెద్దల",
@@ -1000,7 +1023,7 @@
         footerSub: "ప్రేమాభిమానాలతో ఆహ్వానించువారు",
         footerCouple: "హారిక &amp; సంపత్ కుటుంబ సభ్యులు",
         toastCopied: "ఆహ్వాన లింక్ కాపీ చేయబడింది!",
-        downloadSuccess: "ఆహ్వాన పత్రిక (Invitee.png) డౌన్‌లోడ్ అవుతోంది..."
+        downloadSuccess: "SamRika ఆహ్వాన పత్రిక డౌన్‌లోడ్ అవుతోంది..."
       }
     };
 
@@ -1066,7 +1089,7 @@
         : 'Engagement Ceremony | Harika & Sampath #SamRika';
       
       const shareText = currentLang === 'te'
-        ? 'హారిక & సంపత్ నిశ్చితార్థ మహోత్సవానికి మిమ్మల్ని సాదరంగా ఆహ్వానిస్తున్నాము.\n📅 శుక్రవారం, 30 అక్టోబర్ 2026, ఉదయం 11:00 గంటలకు.\nవేదిక: సూరారం, హైదరాబాద్.'
+        ? 'హారిక & సంపత్ నిశ్చితార్థ మహోత్సవానికి మిమ్మల్ని సాదరంగా ఆహ్వానిస్తున్నాము.\n📅 శుక్రవారం, 30 అక్టోబర్ 2026, మధ్యాహ్నం 12:30 గంటలకు.\nవేదిక: సూరారం, హైదరాబాద్.'
         : 'We warmly invite you to the Engagement Ceremony of Harika & Sampath!\n📅 Friday, 30 October 2026 at 12:30 PM\n📍 Suraram, Hyderabad.';
 
       const shareUrl = window.location.href;
